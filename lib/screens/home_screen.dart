@@ -1,12 +1,9 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/app_style.dart';
 import 'package:flyx/base/widgets/app_double_text.dart';
+import 'package:flyx/base/widgets/tikect_view.dart';
 
 //dbs tech 3:38
 class HomeScreen extends StatelessWidget {
@@ -62,6 +59,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const AppDoubleText(
                       bigText: "Upcoming flight", smallText: "view all"),
+                  const TikectView()
                 ],
               ),
             ),
