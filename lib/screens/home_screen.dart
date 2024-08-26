@@ -31,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Good Morning", style: AppStyles.headLine3),
+                            Text("Hello!", style: AppStyles.headLine3),
                             Text("Book Tickets", style: AppStyles.headLine1),
                           ],
                         ),
