@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -30,6 +31,8 @@ class HomeScreen extends StatelessWidget {
                     width: 50,
                     height: 50,
                     decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/logo.png")),
                       borderRadius: BorderRadius.circular(10),
                     ),
                   )
