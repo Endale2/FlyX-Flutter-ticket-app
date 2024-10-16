@@ -1,6 +1,5 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flyx/base/screens/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -27,7 +26,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("My Tickets")),
       body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.blueGrey,

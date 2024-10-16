@@ -3,6 +3,7 @@ import 'package:flyx/base/bottom_nav_bar.dart';
 
 //2:05
 //3:00
+//3:23
 void main() {
   runApp(MyApp());
 }
@@ -12,6 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: BottomNavBar());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: BottomNavBar());
   }
 }
