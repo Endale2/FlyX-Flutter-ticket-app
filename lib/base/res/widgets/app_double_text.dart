@@ -1,10 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flyx/base/res/styles/appStyles.dart';
 
 class AppDoubleText extends StatelessWidget {
-  const AppDoubleText({super.key});
+  const AppDoubleText(
+      {super.key, required this.bigText, required this.smallText});
+
+  final String smallText;
+  final String bigText;
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(bigText, style: Appstyles.headline2),
+        InkWell(
+          onTap: () {},
+          child: Text(smallText,
+              style:
+                  Appstyles.textStyle.copyWith(color: Appstyles.primaryColor)),
+        )
+      ],
+    );
   }
 }

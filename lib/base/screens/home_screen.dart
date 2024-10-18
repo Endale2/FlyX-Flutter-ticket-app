@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
+import 'package:flyx/base/res/widgets/app_double_text.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -58,10 +59,15 @@ class HomeScreen extends StatelessWidget {
                         Text("Search...")
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  AppDoubleText(
+                      bigText: "Upcoming Flights", smallText: "View all")
                 ],
               ),
-            )
+            ),
           ],
         ));
   }
