@@ -4,6 +4,7 @@ import 'package:flyx/base/bottom_nav_bar.dart';
 //2:05
 //3:00
 //3:23
+//4:00
 void main() {
   runApp(MyApp());
 }
