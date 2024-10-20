@@ -7,6 +7,7 @@ class Appstyles {
   static Color bgColor = Color(0xFFeeedf2);
   static Color textColor = Color(0xFF3b3b3b);
   static Color ticketBlue = Color(0xFF526799);
+  static Color ticketOrange = Color(0xFFF37B67);
 
   static TextStyle textStyle = TextStyle(
       fontSize: 16, fontWeight: FontWeight.w500, color: Appstyles.textColor);
@@ -19,4 +20,7 @@ class Appstyles {
 
   static TextStyle headline3 =
       const TextStyle(fontSize: 17, fontWeight: FontWeight.w500);
+
+  static TextStyle headline4 =
+      const TextStyle(fontSize: 14, fontWeight: FontWeight.w500);
 }
