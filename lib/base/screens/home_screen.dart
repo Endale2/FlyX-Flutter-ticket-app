@@ -6,6 +6,7 @@ import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
 import 'package:flyx/base/res/widgets/app_double_text.dart';
 import 'package:flyx/base/res/widgets/ticket_view.dart';
+import 'package:flyx/base/utils/all_json.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -69,7 +70,15 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 20,
                   ),
-                  TicketView()
+                  SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: ticketList
+                            .map((singleTicket) => TicketView(
+                                  ticket: singleTicket,
+                                ))
+                            .toList(),
+                      ))
                 ],
               ),
             ),
