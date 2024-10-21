@@ -9,7 +9,8 @@ import 'package:flyx/base/res/widgets/textStyle_third.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  const TicketView({super.key, required this.ticket});
+  final bool wholeScreen;
+  const TicketView({super.key, required this.ticket, this.wholeScreen = false});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class TicketView extends StatelessWidget {
         width: size.width * 0.85,
         height: 199,
         child: Container(
-            margin: EdgeInsets.only(right: 16),
+            margin: EdgeInsets.only(right: wholeScreen == true ? 0 : 16),
             child: Column(children: [
               Container(
                 padding: EdgeInsets.all(16),
@@ -109,17 +110,17 @@ class TicketView extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           AppColumnTextLayout(
-                            topText: "20 MAY",
+                            topText: ticket["date"],
                             bottomText: "Date",
                             alignment: CrossAxisAlignment.start,
                           ),
                           AppColumnTextLayout(
-                            topText: tiket["departure_time"],
+                            topText: ticket["departure_time"],
                             bottomText: "Departure Time",
                             alignment: CrossAxisAlignment.center,
                           ),
                           AppColumnTextLayout(
-                            topText: "30",
+                            topText: ticket["number"].toString(),
                             bottomText: "Number",
                             alignment: CrossAxisAlignment.end,
                           )
