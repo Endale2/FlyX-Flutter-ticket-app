@@ -34,3 +34,12 @@ class AppTicketTabs extends StatelessWidget {
     );
   }
 }
+
+class AppTabs extends StatelessWidget {
+  const AppTabs({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
