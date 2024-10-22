@@ -1,11 +1,10 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
 import 'package:flyx/base/res/widgets/app_double_text.dart';
 import 'package:flyx/base/res/widgets/ticket_view.dart';
+import 'package:flyx/base/screens/widgets/hotels.dart';
 import 'package:flyx/base/utils/all_json.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,6 +20,7 @@ class HomeScreen extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,8 +65,10 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 40,
                   ),
-                  const AppDoubleText(
-                      bigText: "Upcoming Flights", smallText: "View all"),
+                  AppDoubleText(
+                      bigText: "Upcoming Flights",
+                      smallText: "View all",
+                      func: () => Navigator.pushNamed(context, "all_tickets")),
                   SizedBox(
                     height: 20,
                   ),
@@ -82,7 +84,23 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     height: 40,
                   ),
-                  const AppDoubleText(bigText: "Hotels", smallText: "View all"),
+                  AppDoubleText(
+                    bigText: "Hotels",
+                    smallText: "View all",
+                    func: () => Navigator.pushNamed(context, "all_tickets"),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: hotelList
+                            .map((singlehotel) => Hotel(
+                                  hotel: singlehotel,
+                                ))
+                            .toList(),
+                      )),
                 ],
               ),
             ),
