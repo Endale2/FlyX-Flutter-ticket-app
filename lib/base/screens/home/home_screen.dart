@@ -4,7 +4,7 @@ import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
 import 'package:flyx/base/res/widgets/app_double_text.dart';
 import 'package:flyx/base/res/widgets/ticket_view.dart';
-import 'package:flyx/base/screens/widgets/hotels.dart';
+import 'package:flyx/base/screens/home/hotels.dart';
 import 'package:flyx/base/utils/all_json.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -96,6 +96,7 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                         children: hotelList
+                            .take(2)
                             .map((singlehotel) => Hotel(
                                   hotel: singlehotel,
                                 ))

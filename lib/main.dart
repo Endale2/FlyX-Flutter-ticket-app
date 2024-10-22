@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flyx/base/bottom_nav_bar.dart';
-import 'package:flyx/base/screens/all_tickets.dart';
+import 'package:flyx/base/screens/home/all_tickets.dart';
 
 //2:05
 //3:00
