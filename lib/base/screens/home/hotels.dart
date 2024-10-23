@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
 
 class Hotel extends StatelessWidget {
