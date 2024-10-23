@@ -11,23 +11,11 @@ class AppTicketTabs extends StatelessWidget {
           borderRadius: BorderRadius.circular(50), color: Color(0xFFF6f4fd)),
       child: Row(
         children: [
-          Container(
-            width: size.width * 0.44,
-            padding: EdgeInsets.symmetric(vertical: 7),
-            child: const Center(child: Text("Airline Tickets")),
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius:
-                    BorderRadius.horizontal(left: Radius.circular(50))),
-          ),
-          Container(
-            width: size.width * 0.44,
-            padding: EdgeInsets.symmetric(vertical: 7),
-            child: const Center(child: Text("Hotels")),
-            decoration: const BoxDecoration(
-                color: Colors.transparent,
-                borderRadius:
-                    BorderRadius.horizontal(right: Radius.circular(50))),
+          AppTabs(tabText: "Air Tickets"),
+          AppTabs(
+            tabText: "Hotels",
+            tabBorder: true,
+            tabColor: true,
           )
         ],
       ),
@@ -36,10 +24,28 @@ class AppTicketTabs extends StatelessWidget {
 }
 
 class AppTabs extends StatelessWidget {
-  const AppTabs({super.key});
+  const AppTabs(
+      {super.key,
+      this.tabText = "",
+      this.tabBorder = false,
+      this.tabColor = false});
+
+  final String tabText;
+  final bool tabBorder;
+  final bool tabColor;
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final size = MediaQuery.of(context).size;
+    return Container(
+      width: size.width * 0.44,
+      padding: EdgeInsets.symmetric(vertical: 7),
+      child: Center(child: Text(tabText)),
+      decoration: BoxDecoration(
+          color: tabColor == false ? Colors.white : Colors.transparent,
+          borderRadius: tabBorder == false
+              ? BorderRadius.horizontal(left: Radius.circular(50))
+              : BorderRadius.horizontal(right: Radius.circular(50))),
+    );
   }
 }
