@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
 import 'package:flyx/base/res/widgets/app_column_text_layout.dart';
+import 'package:flyx/base/res/widgets/app_layoutbuilder_widget.dart';
 import 'package:flyx/base/res/widgets/ticket_view.dart';
 import 'package:flyx/base/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:flyx/base/utils/all_json.dart';
@@ -38,22 +39,53 @@ class TicketScreen extends StatelessWidget {
                 ticket: ticketList[0],
                 isColor: true,
               )),
+          SizedBox(
+            height: 1,
+          ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 15),
             padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             color: Appstyles.ticketColor,
-            child: Column(
+            child: const Column(
               children: [
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const AppColumnTextLayout(
+                    AppColumnTextLayout(
                       isColor: true,
                       topText: "Flutter DB",
                       bottomText: "Passenger",
                       alignment: CrossAxisAlignment.start,
                     ),
-                    const AppColumnTextLayout(
+                    AppColumnTextLayout(
+                      isColor: true,
+                      topText: "5221 65476",
+                      bottomText: "Passport",
+                      alignment: CrossAxisAlignment.end,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                AppLayoutbuilderWidget(
+                  randomDivider: 15,
+                  width: 5,
+                  isColor: false,
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnTextLayout(
+                      isColor: true,
+                      topText: "Flutter DB",
+                      bottomText: "Passenger",
+                      alignment: CrossAxisAlignment.start,
+                    ),
+                    AppColumnTextLayout(
                       isColor: true,
                       topText: "5221 65476",
                       bottomText: "Passport",
