@@ -28,6 +28,6 @@ class Appstyles {
   static TextStyle headline3 =
       const TextStyle(fontSize: 17, fontWeight: FontWeight.w500);
 
-  static TextStyle headline4 =
-      const TextStyle(fontSize: 14, fontWeight: FontWeight.w500);
+  static TextStyle headline4 = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey.shade500);
 }
