@@ -6,11 +6,13 @@ class AppColumnTextLayout extends StatelessWidget {
   final String topText;
   final String bottomText;
   final CrossAxisAlignment alignment;
+  final bool? isColor;
   const AppColumnTextLayout(
       {super.key,
       required this.topText,
       required this.bottomText,
-      required this.alignment});
+      required this.alignment,
+      this.isColor});
 
   @override
   Widget build(BuildContext context) {

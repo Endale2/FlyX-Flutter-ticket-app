@@ -10,7 +10,12 @@ import 'package:flyx/base/res/widgets/textStyle_third.dart';
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
   final bool wholeScreen;
-  const TicketView({super.key, required this.ticket, this.wholeScreen = false});
+  final bool? isColor;
+  const TicketView(
+      {super.key,
+      required this.ticket,
+      this.wholeScreen = false,
+      this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -28,9 +33,14 @@ class TicketView extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          TextstyleThird(text: ticket["from"]["code"]),
+                          TextstyleThird(
+                            text: ticket["from"]["code"],
+                            isColor: isColor,
+                          ),
                           Expanded(child: Container()),
-                          BigDot(),
+                          BigDot(
+                            isColor: isColor,
+                          ),
                           Expanded(
                               child: Stack(
                             children: [
@@ -44,13 +54,20 @@ class TicketView extends StatelessWidget {
                                       angle: 1.5,
                                       child: Icon(
                                         Icons.local_airport_rounded,
-                                        color: Colors.white,
+                                        color: isColor == null
+                                            ? Colors.white
+                                            : Appstyles.planeSecondColor,
                                       )))
                             ],
                           )),
-                          BigDot(),
+                          BigDot(
+                            isColor: isColor,
+                          ),
                           Expanded(child: Container()),
-                          TextstyleThird(text: ticket["to"]["code"]),
+                          TextstyleThird(
+                            text: ticket["to"]["code"],
+                            isColor: isColor,
+                          ),
                         ],
                       ),
                       SizedBox(height: 3),
@@ -60,14 +77,19 @@ class TicketView extends StatelessWidget {
                               width: 100,
                               child: TextStyleFourth(
                                 text: ticket["from"]["name"],
+                                isColor: isColor,
                               )),
                           Expanded(child: Container()),
-                          TextStyleFourth(text: ticket["flying_time"]),
+                          TextStyleFourth(
+                            text: ticket["flying_time"],
+                            isColor: isColor,
+                          ),
                           Expanded(child: Container()),
                           SizedBox(
                             width: 100,
                             child: TextStyleFourth(
                               text: ticket["to"]["name"],
+                              isColor: isColor,
                               align: TextAlign.end,
                             ),
                           )
@@ -77,25 +99,32 @@ class TicketView extends StatelessWidget {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Appstyles.ticketBlue,
+                    color: isColor == null
+                        ? Appstyles.ticketBlue
+                        : Appstyles.ticketColor,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(21),
                         topRight: Radius.circular(21))),
               ),
               Container(
-                color: Appstyles.ticketOrange,
+                color: isColor == null
+                    ? Appstyles.ticketOrange
+                    : Appstyles.ticketColor,
                 child: Row(
                   children: [
                     BigCircle(
+                      isColor: isColor,
                       isRight: false,
                     ),
                     Expanded(
                       child: AppLayoutbuilderWidget(
+                        isColor: isColor,
                         randomDivider: 16,
                         width: 6,
                       ),
                     ),
                     BigCircle(
+                      isColor: isColor,
                       isRight: true,
                     )
                   ],
@@ -131,10 +160,13 @@ class TicketView extends StatelessWidget {
                   ),
                 ),
                 decoration: BoxDecoration(
-                    color: Appstyles.ticketOrange,
+                    color: isColor == null
+                        ? Appstyles.ticketOrange
+                        : Appstyles.ticketColor,
                     borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(21),
-                        bottomRight: Radius.circular(21))),
+                        bottomLeft: Radius.circular(isColor == null ? 21 : 0),
+                        bottomRight:
+                            Radius.circular(isColor == null ? 21 : 0))),
               )
             ])));
   }
