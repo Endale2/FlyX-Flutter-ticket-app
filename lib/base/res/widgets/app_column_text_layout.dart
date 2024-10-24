@@ -19,9 +19,10 @@ class AppColumnTextLayout extends StatelessWidget {
     return Column(
       crossAxisAlignment: alignment,
       children: [
-        TextstyleThird(text: topText),
+        TextstyleThird(text: topText, isColor: isColor),
         SizedBox(height: 5),
         TextStyleFourth(
+          isColor: isColor,
           text: bottomText,
         ),
       ],
