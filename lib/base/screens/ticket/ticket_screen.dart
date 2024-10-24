@@ -122,6 +122,9 @@ class TicketScreen extends StatelessWidget {
                             )
                           ],
                         ),
+                        const SizedBox(
+                          height: 5,
+                        ),
                         Text("Payment Method", style: Appstyles.headline4)
                       ],
                     ),
@@ -135,6 +138,19 @@ class TicketScreen extends StatelessWidget {
                 ),
               ],
             ),
+          ),
+          Container(
+            child: Container(
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(15),
+                child: Text("Hello Flutter"),
+              ),
+            ),
+            decoration: BoxDecoration(
+                color: Appstyles.ticketColor,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(21),
+                    bottomRight: Radius.circular(21))),
           )
         ],
       ),
