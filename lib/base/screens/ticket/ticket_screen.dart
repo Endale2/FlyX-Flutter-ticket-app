@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
+import 'package:flyx/base/res/widgets/app_column_text_layout.dart';
 import 'package:flyx/base/res/widgets/ticket_view.dart';
 import 'package:flyx/base/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:flyx/base/utils/all_json.dart';
@@ -33,12 +33,37 @@ class TicketScreen extends StatelessWidget {
             height: 20,
           ),
           Container(
-              color: Colors.red,
               padding: EdgeInsets.only(left: 16),
               child: TicketView(
                 ticket: ticketList[0],
                 isColor: true,
-              ))
+              )),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 15),
+            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            color: Appstyles.ticketColor,
+            child: Column(
+              children: [
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const AppColumnTextLayout(
+                      isColor: true,
+                      topText: "Flutter DB",
+                      bottomText: "Passenger",
+                      alignment: CrossAxisAlignment.start,
+                    ),
+                    const AppColumnTextLayout(
+                      isColor: true,
+                      topText: "5221 65476",
+                      bottomText: "Passport",
+                      alignment: CrossAxisAlignment.end,
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )
         ],
       ),
     );
