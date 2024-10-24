@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
 import 'package:flyx/base/res/widgets/app_column_text_layout.dart';
 import 'package:flyx/base/res/widgets/app_layoutbuilder_widget.dart';
@@ -39,16 +40,16 @@ class TicketScreen extends StatelessWidget {
                 ticket: ticketList[0],
                 isColor: true,
               )),
-          SizedBox(
+          const SizedBox(
             height: 1,
           ),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 15),
-            padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            margin: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
             color: Appstyles.ticketColor,
-            child: const Column(
+            child: Column(
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     AppColumnTextLayout(
@@ -65,34 +66,73 @@ class TicketScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
-                AppLayoutbuilderWidget(
+                const AppLayoutbuilderWidget(
                   randomDivider: 15,
                   width: 5,
                   isColor: false,
                 ),
-                SizedBox(
+                const SizedBox(
+                  height: 20,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnTextLayout(
+                      isColor: true,
+                      topText: "4656 634878896476",
+                      bottomText: "Number of E-ticket",
+                      alignment: CrossAxisAlignment.start,
+                    ),
+                    AppColumnTextLayout(
+                      isColor: true,
+                      topText: "B45266",
+                      bottomText: "Booking Code",
+                      alignment: CrossAxisAlignment.end,
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                const AppLayoutbuilderWidget(
+                  randomDivider: 15,
+                  width: 5,
+                  isColor: false,
+                ),
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    AppColumnTextLayout(
-                      isColor: true,
-                      topText: "Flutter DB",
-                      bottomText: "Passenger",
-                      alignment: CrossAxisAlignment.start,
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(
+                              AppMedia.visaCard,
+                              scale: 8,
+                            ),
+                            Text(
+                              "*** 2462",
+                              style: Appstyles.headline3,
+                            )
+                          ],
+                        ),
+                        Text("Payment Method", style: Appstyles.headline4)
+                      ],
                     ),
                     AppColumnTextLayout(
                       isColor: true,
-                      topText: "5221 65476",
-                      bottomText: "Passport",
+                      topText: "\$249.99",
+                      bottomText: "Price",
                       alignment: CrossAxisAlignment.end,
                     ),
                   ],
-                )
+                ),
               ],
             ),
           )
