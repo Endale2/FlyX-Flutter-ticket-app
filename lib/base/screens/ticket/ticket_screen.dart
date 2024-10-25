@@ -1,5 +1,6 @@
 import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
 import 'package:flyx/base/res/widgets/app_column_text_layout.dart';
@@ -140,13 +141,24 @@ class TicketScreen extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(
+            height: 1,
+          ),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 15),
+            padding: const EdgeInsets.symmetric(vertical: 20),
             child: Container(
+              height: 70,
+              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
                 child: BarcodeWidget(
-                    data: "Flutter bar code ", barcode: Barcode.code128()),
+                  data: "Flutter bar code ",
+                  barcode: Barcode.code128(),
+                  drawText: false,
+                  color: Appstyles.textColor,
+                  width: double.infinity,
+                ),
               ),
             ),
             decoration: BoxDecoration(
@@ -154,7 +166,15 @@ class TicketScreen extends StatelessWidget {
                 borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(21),
                     bottomRight: Radius.circular(21))),
-          )
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Container(
+              padding: EdgeInsets.only(left: 16),
+              child: TicketView(
+                ticket: ticketList[0],
+              )),
         ],
       ),
     );
