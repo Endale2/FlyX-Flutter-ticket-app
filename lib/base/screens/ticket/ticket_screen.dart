@@ -1,3 +1,4 @@
+import 'package:barcode_widget/barcode_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flyx/base/res/media.dart';
 import 'package:flyx/base/res/styles/appStyles.dart';
@@ -144,7 +145,8 @@ class TicketScreen extends StatelessWidget {
             child: Container(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: const Center(child: Text("Hello Flutter")),
+                child: BarcodeWidget(
+                    data: "Flutter bar code ", barcode: Barcode.code128()),
               ),
             ),
             decoration: BoxDecoration(
