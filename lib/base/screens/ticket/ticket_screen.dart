@@ -140,15 +140,16 @@ class TicketScreen extends StatelessWidget {
             ),
           ),
           Container(
+            margin: const EdgeInsets.symmetric(horizontal: 15),
             child: Container(
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(15),
-                child: Center(child: Text("Hello Flutter")),
+                child: const Center(child: Text("Hello Flutter")),
               ),
             ),
             decoration: BoxDecoration(
                 color: Appstyles.ticketColor,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(21),
                     bottomRight: Radius.circular(21))),
           )

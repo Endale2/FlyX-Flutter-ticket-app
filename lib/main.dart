@@ -13,7 +13,6 @@ import 'package:flyx/base/screens/home/all_tickets.dart';
 //8:50
 //9:58
 
-
 void main() {
   runApp(MyApp());
 }
