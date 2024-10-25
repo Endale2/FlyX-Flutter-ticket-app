@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flyx/base/bottom_nav_bar.dart';
+import 'package:flyx/base/screens/home/all_hotels.dart';
 import 'package:flyx/base/screens/home/all_tickets.dart';
 
 //2:05
@@ -22,9 +23,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        routes: {"all_tickets": (context) => AllTickets()},
-        debugShowCheckedModeBanner: false,
-        home: BottomNavBar());
+    return MaterialApp(routes: {
+      "all_tickets": (context) => const AllTickets(),
+      "all_hotels": (context) => const AllHotels(),
+    }, debugShowCheckedModeBanner: false, home: const BottomNavBar());
   }
 }
